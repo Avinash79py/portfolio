@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avinash Kumar - AI Product Manager Portfolio</title>
+    <title>Avinash - Product Manager Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/8DsDSpb1/favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Global Styles */
         * {
@@ -15,20 +16,18 @@
             font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        
         :root {
-            --primary: #2563EB;
-            --secondary: #7C3AED;
-            --accent: #3B82F6;
-            --dark: #1E293B;
-            --light: #F8FAFC;
-            --text: #64748B;
-            --text-dark: #334155;
+            --primary: #2E5BFF;
+            --secondary: #00C4CC;
+            --accent: #7B68EE;
+            --dark: #1A1D29;
+            --light: #F8F9FF;
+            --text: #5A6376;
+            --text-dark: #2D3748;
             --white: #FFFFFF;
-            --gradient: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
-            --shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-            --radius: 16px;
+            --gradient: linear-gradient(135deg, #2E5BFF 0%, #00C4CC 100%);
+            --shadow: 0 10px 30px rgba(46, 91, 255, 0.1);
+            --radius: 12px;
         }
         
         html {
@@ -36,7 +35,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            background: #F8F9FF;
             color: var(--text-dark);
             line-height: 1.6;
             overflow-x: hidden;
@@ -58,19 +57,17 @@
         
         .section-title {
             font-size: clamp(2.2rem, 5vw, 3rem);
-            font-weight: 800;
+            font-weight: 700;
             margin-bottom: 20px;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: var(--dark);
             line-height: 1.1;
             letter-spacing: -0.5px;
+            font-family: 'Playfair Display', serif;
         }
         
         .intro-text {
             font-size: 1.1rem;
-            color: #666;
+            color: var(--primary);
             margin-bottom: 15px;
             letter-spacing: 1.5px;
             text-transform: uppercase;
@@ -107,7 +104,7 @@
             z-index: 1000;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
         
@@ -122,13 +119,11 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 800;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: var(--primary);
             text-decoration: none;
             display: flex;
             align-items: center;
+            font-family: 'Playfair Display', serif;
         }
         
         .logo i {
@@ -195,6 +190,7 @@
             min-height: 100vh;
             width: 100%;
             margin-top: 0;
+            border-radius: 0 0 30px 30px;
         }
         
         .hero-content {
@@ -205,21 +201,19 @@
         
         .name {
             font-size: clamp(2.2rem, 5vw, 3.5rem);
-            font-weight: 800;
+            font-weight: 700;
             margin-bottom: 15px;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: var(--dark);
             line-height: 1.1;
             letter-spacing: -0.5px;
+            font-family: 'Playfair Display', serif;
         }
         
         .title {
             font-size: clamp(1.4rem, 2.5vw, 1.9rem);
             font-weight: 500;
             margin-bottom: 25px;
-            color: #444;
+            color: var(--primary);
             position: relative;
             padding-left: 20px;
         }
@@ -233,24 +227,6 @@
             left: 0;
             top: 0;
             border-radius: 3px;
-        }
-        
-        /* AI Badge */
-        .ai-badge {
-            display: inline-flex;
-            align-items: center;
-            background: rgba(37, 99, 235, 0.1);
-            color: var(--primary);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-weight: 600;
-            margin-top: 15px;
-            font-size: 0.9rem;
-        }
-        
-        .ai-badge i {
-            margin-right: 8px;
-            color: var(--secondary);
         }
         
         /* Metrics Section */
@@ -274,7 +250,7 @@
         
         .metric:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+            box-shadow: var(--shadow);
             border-color: var(--primary);
         }
         
@@ -328,7 +304,7 @@
         }
         
         .metric-products {
-            color: #10B981;
+            color: #00C4CC;
         }
         
         /* Trusted By Section */
@@ -419,7 +395,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 6px 15px rgba(46, 91, 255, 0.3);
             transition: all 0.3s ease;
             flex-shrink: 0;
             position: relative;
@@ -443,7 +419,7 @@
         
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 10px 25px rgba(46, 91, 255, 0.4);
         }
         
         .cta-button.secondary {
@@ -456,7 +432,7 @@
         .cta-button.secondary:hover {
             background: #f5f8ff;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
+            box-shadow: 0 5px 15px rgba(46, 91, 255, 0.2);
         }
         
         /* HERO IMAGE */
@@ -469,6 +445,7 @@
             justify-content: center;
             padding: 0;
             margin: 0;
+            background: linear-gradient(135deg, #F8F9FF 0%, #E6E9FF 100%);
         }
         
         .hero-image-container {
@@ -500,6 +477,8 @@
             overflow: hidden;
             position: relative;
             width: 100%;
+            border-radius: 30px;
+            margin: 40px 0;
         }
         
         /* Skills Section */
@@ -523,7 +502,7 @@
         
         .skill-category:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+            box-shadow: var(--shadow);
             border-color: var(--primary);
         }
         
@@ -582,7 +561,7 @@
             background: var(--primary);
             color: white;
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
+            box-shadow: 0 4px 8px rgba(46, 91, 255, 0.2);
         }
         
         /* Strengths Section */
@@ -606,7 +585,7 @@
         
         .strength-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+            box-shadow: var(--shadow);
             border-color: var(--primary);
         }
         
@@ -654,6 +633,8 @@
             overflow: hidden;
             position: relative;
             width: 100%;
+            border-radius: 30px;
+            margin: 40px 0;
         }
         
         .projects-grid {
@@ -674,7 +655,7 @@
         
         .project-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: var(--shadow);
         }
         
         .project-image {
@@ -727,7 +708,7 @@
         }
         
         .project-tag {
-            background: rgba(37, 99, 235, 0.1);
+            background: rgba(46, 91, 255, 0.1);
             color: var(--primary);
             padding: 5px 12px;
             border-radius: 50px;
@@ -765,6 +746,8 @@
             overflow: hidden;
             position: relative;
             width: 100%;
+            border-radius: 30px;
+            margin: 40px 0;
         }
         
         /* Metrics Summary */
@@ -788,7 +771,7 @@
         
         .summary-metric:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+            box-shadow: var(--shadow);
             border-color: var(--primary);
         }
         
@@ -841,7 +824,7 @@
         
         .timeline-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+            box-shadow: var(--shadow);
         }
         
         .timeline-marker {
@@ -901,7 +884,7 @@
         }
         
         .achievement-icon {
-            color: #10B981;
+            color: #00C4CC;
             margin-right: 12px;
             font-size: 0.9rem;
             margin-top: 5px;
@@ -932,7 +915,7 @@
             background: var(--primary);
             color: white;
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
+            box-shadow: 0 4px 8px rgba(46, 91, 255, 0.2);
         }
         
         /* Recommendations Section */
@@ -943,6 +926,8 @@
             position: relative;
             width: 100%;
             text-align: center;
+            border-radius: 30px;
+            margin: 40px 0;
         }
         
         .section-subtitle {
@@ -964,11 +949,11 @@
         }
         
         .recommendation-card {
-            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            background: var(--light);
             border-radius: var(--radius);
             padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(46, 91, 255, 0.1);
             transition: all 0.4s ease;
             display: flex;
             flex-direction: column;
@@ -980,7 +965,7 @@
         
         .recommendation-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(26, 32, 44, 0.4);
+            box-shadow: var(--shadow);
         }
         
         .recommendation-card::before {
@@ -1007,8 +992,8 @@
             border-radius: 14px;
             overflow: hidden;
             margin-right: 20px;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(46, 91, 255, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.4s ease;
             flex-shrink: 0;
         }
@@ -1016,7 +1001,7 @@
         .recommender-image:hover {
             transform: scale(1.05);
             border-color: var(--primary);
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 8px 20px rgba(46, 91, 255, 0.1);
         }
         
         .recommender-image img {
@@ -1032,18 +1017,18 @@
         .recommender-name {
             font-size: 1.3rem;
             font-weight: 700;
-            color: #ffffff;
+            color: var(--dark);
             margin-bottom: 5px;
         }
         
         .recommender-title {
             font-size: 0.95rem;
-            color: #a0aec0;
+            color: var(--text);
             margin-bottom: 10px;
         }
         
         .recommendation-content {
-            color: #e2e8f0;
+            color: var(--text-dark);
             line-height: 1.7;
             font-size: 1.05rem;
             margin-bottom: 25px;
@@ -1066,11 +1051,11 @@
         .recommendation-link {
             display: inline-flex;
             align-items: center;
-            color: #ffffff;
+            color: var(--primary);
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            background: var(--primary);
+            background: rgba(46, 91, 255, 0.1);
             padding: 10px 20px;
             border-radius: 8px;
             width: fit-content;
@@ -1079,7 +1064,7 @@
         
         .recommendation-link:hover {
             color: #ffffff;
-            background: #1D4ED8;
+            background: var(--primary);
             transform: translateX(5px);
         }
         
@@ -1093,7 +1078,7 @@
         }
         
         .pm-skills-highlight {
-            background: rgba(37, 99, 235, 0.1);
+            background: rgba(46, 91, 255, 0.1);
             padding: 3px 8px;
             border-radius: 4px;
             font-weight: 600;
@@ -1107,6 +1092,8 @@
             position: relative;
             width: 100%;
             text-align: center;
+            border-radius: 30px;
+            margin: 40px 0;
         }
         
         .contact-options {
@@ -1126,7 +1113,7 @@
             font-weight: 600;
             text-decoration: none;
             gap: 10px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             flex-shrink: 0;
             position: relative;
@@ -1150,7 +1137,7 @@
         
         .contact-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
         
         .whatsapp-button {
@@ -1170,15 +1157,16 @@
         
         .email-button:hover {
             background: linear-gradient(135deg, #1D4ED8 0%, var(--primary) 100%);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 10px 25px rgba(46, 91, 255, 0.4);
         }
         
         /* Footer */
         footer {
-            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            background: var(--dark);
             color: #e2e8f0;
             padding: 40px 0 20px;
             text-align: center;
+            margin-top: 40px;
         }
         
         .footer-container {
@@ -1197,13 +1185,11 @@
         .footer-logo {
             font-size: 2rem;
             font-weight: 800;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: var(--white);
             text-decoration: none;
             display: flex;
             align-items: center;
+            font-family: 'Playfair Display', serif;
         }
         
         .footer-logo i {
@@ -1268,7 +1254,7 @@
         .decoration-1 {
             width: 200px;
             height: 200px;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(46, 91, 255, 0.1) 0%, rgba(0, 196, 204, 0.1) 100%);
             border-radius: 50%;
             top: -50px;
             right: -50px;
@@ -1278,27 +1264,12 @@
         .decoration-2 {
             width: 150px;
             height: 150px;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(124, 58, 237, 0.08) 100%);
+            background: linear-gradient(135deg, rgba(46, 91, 255, 0.08) 0%, rgba(0, 196, 204, 0.08) 100%);
             border-radius: 30px;
             bottom: 40px;
             left: -40px;
             transform: rotate(45deg);
             animation: rotate 20s linear infinite;
-        }
-        
-        /* AI Circuit Background Element */
-        .ai-circuit {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 300px;
-            height: 300px;
-            opacity: 0.03;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath fill='%232563EB' d='M40,40 L160,40 L160,160 L40,160 Z' stroke='%232563EB' stroke-width='2'/%3E%3Cpath fill='%237C3AED' d='M60,60 L140,60 L140,140 L60,140 Z' stroke='%237C3AED' stroke-width='2'/%3E%3Ccircle cx='100' cy='100' r='30' fill='%233B82F6' stroke='%233B82F6' stroke-width='2'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-            z-index: 0;
         }
         
         /* Animations */
@@ -1654,7 +1625,7 @@
     <!-- Header -->
     <header>
         <div class="header-container">
-            <a href="#" class="logo"><i class="fas fa-robot"></i> Avinash Kumar</a>
+            <a href="#" class="logo"><i class="fas fa-rocket"></i> Avinash</a>
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </button>
@@ -1675,21 +1646,16 @@
     <section id="home" class="hero-section">
         <div class="decoration decoration-1"></div>
         <div class="decoration decoration-2"></div>
-        <div class="ai-circuit"></div>
         
         <div class="hero-content">
-            <p class="intro-text">AI Product Manager</p>
-            <h1 class="name">Avinash Kumar</h1>
-            <h2 class="title">Building AI-powered products that users love</h2>
+            <p class="intro-text">Product Manager</p>
+            <h1 class="name">Avinash</h1>
+            <h2 class="title">Building products that users love</h2>
             
             <p class="description">
-                I build AI-powered products that solve real human problems and deliver measurable business results. 
+                I build products that solve real human problems and deliver measurable business results. 
                 Specializing in 0-to-1 product development with a focus on user-centric design and data-driven decisions.
             </p>
-            
-            <div class="ai-badge">
-                <i class="fas fa-robot"></i> Specializing in AI/ML Product Strategy
-            </div>
             
             <!-- Metrics Section -->
             <div class="metrics-container">
@@ -1745,7 +1711,7 @@
         
         <div class="hero-image">
             <div class="hero-image-container">
-                <img src="https://i.ibb.co/hFGRvdnM/Untitled-design.png" alt="Avinash Kumar - AI Product Manager">
+                <img src="https://i.ibb.co/hFGRvdnM/Untitled-design.png" alt="Avinash - Product Manager">
             </div>
         </div>
     </section>
@@ -1754,13 +1720,12 @@
     <section id="about" class="about-section">
         <div class="decoration decoration-1"></div>
         <div class="decoration decoration-2"></div>
-        <div class="ai-circuit"></div>
         
         <div class="section-padding">
             <h1 class="section-title">About Me</h1>
             
             <p class="description">
-                I'm a Product Manager with a background in AI and a passion for building products that solve real human problems. I thrive in zero-to-one environments, turning ambiguous challenges into scalable, user-centric solutions.
+                I'm a Product Manager with a passion for building products that solve real human problems. I thrive in zero-to-one environments, turning ambiguous challenges into scalable, user-centric solutions.
             </p>
             
             <p class="description">
@@ -1789,12 +1754,11 @@
                 
                 <div class="skill-category">
                     <div class="category-icon">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-cogs"></i>
                     </div>
                     <h3 class="category-title">Technical Acumen</h3>
                     <div class="skills-list">
-                        <span class="skill-pill">AI & ML Concepts</span>
-                        <span class="skill-pill">Prompt Engineering</span>
+                        <span class="skill-pill">Product Development</span>
                         <span class="skill-pill">No-Code Development</span>
                         <span class="skill-pill">System Design</span>
                         <span class="skill-pill">API Integration</span>
@@ -1847,7 +1811,7 @@
             </div>
             
             <p class="description">
-                This unique combination allows me to act as a crucial bridge between strategy, user needs, and technical implementation of AI-powered systems.
+                This unique combination allows me to act as a crucial bridge between strategy, user needs, and technical implementation of product systems.
             </p>
         </div>
     </section>
@@ -1856,7 +1820,6 @@
     <section id="projects" class="projects-section">
         <div class="decoration decoration-1"></div>
         <div class="decoration decoration-2"></div>
-        <div class="ai-circuit"></div>
         
         <div class="section-padding">
             <p class="intro-text">Featured Work</p>
@@ -1882,7 +1845,7 @@
                             <span class="project-tag">Solo Founder</span>
                             <span class="project-tag">0-to-1 Launch</span>
                         </div>
-                        <a href="https://narravo-ai.framer.website" target="_blank" class="project-link">
+                        <a href="narravo-ai.html" class="project-link">
                             View Project <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -1904,7 +1867,7 @@
                             <span class="project-tag">MVP Validation</span>
                             <span class="project-tag">Growth Strategy</span>
                         </div>
-                        <a href="https://skillflexacademy.com" target="_blank" class="project-link">
+                        <a href="skillflex-academy.html" class="project-link">
                             View Project <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -1926,7 +1889,7 @@
                             <span class="project-tag">Product Strategy</span>
                             <span class="project-tag">Prototyping</span>
                         </div>
-                        <a href="#" class="project-link">
+                        <a href="skillflex-jobboard.html" class="project-link">
                             View Project <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -1939,7 +1902,6 @@
     <section id="experience" class="experience-section">
         <div class="decoration decoration-1"></div>
         <div class="decoration decoration-2"></div>
-        <div class="ai-circuit"></div>
         
         <div class="section-padding">
             <p class="intro-text">Professional Journey</p>
@@ -2102,7 +2064,6 @@
     <section id="recommendations" class="recommendations-section">
         <div class="decoration decoration-1"></div>
         <div class="decoration decoration-2"></div>
-        <div class="ai-circuit"></div>
         
         <div class="section-padding">
             <p class="intro-text">Professional Endorsements</p>
@@ -2214,7 +2175,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+   <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="decoration decoration-1"></div>
         <div class="decoration decoration-2"></div>
@@ -2244,7 +2205,7 @@
     <footer>
         <div class="footer-container">
             <div class="footer-content">
-                <a href="#" class="footer-logo"><i class="fas fa-robot"></i> Avinash Kumar</a>
+                <a href="#" class="footer-logo"><i class="fas fa-rocket"></i> Avinash</a>
                 
                 <div class="footer-links">
                     <a href="#home">Home</a>
@@ -2269,7 +2230,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Avinash Kumar. All rights reserved.</p>
+                <p>&copy; 2025 Avinash Kumar. All rights reserved.</p>
             </div>
         </div>
     </footer>
