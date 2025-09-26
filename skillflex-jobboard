@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Flex Job Board - Three-Sided Marketplace | Avinash Kumar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            --primary: #2563EB;
+            --secondary: #7C3AED;
+            --accent: #3B82F6;
+            --dark: #1E293B;
+            --light: #F8FAFC;
+            --text: #64748B;
+            --text-dark: #334155;
+            --white: #FFFFFF;
+            --gradient: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
+            --shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            --radius: 16px;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 2px solid var(--primary);
+        }
+        
+        .back-button:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateX(-5px);
+        }
+        
+        .back-button i {
+            margin-right: 8px;
+        }
+        
+        /* Hero Section */
+        .project-hero {
+            padding: 150px 0 80px;
+            text-align: center;
+            background: var(--white);
+            box-shadow: var(--shadow);
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .project-badge {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+        
+        .project-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.1;
+        }
+        
+        .project-subtitle {
+            font-size: 1.5rem;
+            color: var(--text);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .meta-label {
+            font-size: 0.9rem;
+            color: var(--text);
+            margin-bottom: 5px;
+        }
+        
+        .meta-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .project-image {
+            margin-top: 50px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Project Content */
+        .project-content {
+            padding: 80px 0;
+        }
+        
+        .content-section {
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--dark);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+        
+        .section-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+        }
+        
+        .highlight-box {
+            background: var(--light);
+            border-left: 4px solid var(--primary);
+            padding: 25px;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 30px 0;
+        }
+        
+        .highlight-box p {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .user-groups {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .user-group {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #E2E8F0;
+        }
+        
+        .user-group:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .user-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .user-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .user-content {
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .process-step {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #E2E8F0;
+        }
+        
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .step-content {
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .outcome-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .outcome-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #E2E8F0;
+        }
+        
+        .outcome-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .outcome-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .outcome-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .outcome-content {
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .prototype-showcase {
+            background: var(--light);
+            padding: 40px;
+            border-radius: var(--radius);
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .prototype-image {
+            max-width: 100%;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 60px 0;
+            background: var(--light);
+            border-radius: var(--radius);
+            margin-top: 60px;
+        }
+        
+        .cta-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button.primary {
+            background: var(--gradient);
+            color: white;
+            box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .cta-button.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+        }
+        
+        .cta-button.secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .cta-button.secondary:hover {
+            background: #f5f8ff;
+            transform: translateY(-3px);
+        }
+        
+        .cta-button i {
+            margin-right: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: #e2e8f0;
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-logo i {
+            margin-right: 10px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .footer-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: #a0aec0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #a0aec0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .project-hero {
+                padding: 120px 0 60px;
+            }
+            
+            .project-meta {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .user-groups, .process-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .outcome-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .project-title {
+                font-size: 2.2rem;
+            }
+            
+            .project-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-content {
+                font-size: 1rem;
+            }
+            
+            .prototype-showcase {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo"><i class="fas fa-robot"></i> Avinash Kumar</a>
+            <a href="index.html#projects" class="back-button"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="project-hero">
+        <div class="project-hero-content">
+            <span class="project-badge">Marketplace • Product Strategy • Prototyping</span>
+            <h1 class="project-title">Skill Flex Job Board</h1>
+            <p class="project-subtitle">The Job Board That Was Too Important to Build Wrong</p>
+            
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">Product Manager & Strategist</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Timeline</span>
+                    <span class="meta-value">2024</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Status</span>
+                    <span class="meta-value">Strategy & Prototype Completed</span>
+                </div>
+            </div>
+            
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Skill Flex Job Board">
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <div class="container">
+        <section class="project-content">
+            <!-- Problem Section -->
+            <div class="content-section">
+                <h2 class="section-title">The Problem: The "No Experience" Catch-22</h2>
+                <p class="section-content">
+                    We had a leak in our bucket.
+                </p>
+                <p class="section-content">
+                    At Skill Flex Academy, we were training amazing, job-ready students. But when they graduated, they were thrown into the deep end of massive job platforms like Naukri and LinkedIn. They'd apply to hundreds of jobs labeled "Entry-Level" only to find they required 2+ years of experience. They were lost in the noise.
+                </p>
+                <p class="section-content">
+                    On the other side, our hiring partners were frustrated. They'd post a job and get 500 applications, but maybe 5 were from candidates with the specific skills they needed. Sifting through them was a huge waste of their time.
+                </p>
+                <div class="highlight-box">
+                    <p>There was a massive disconnect. We were producing the talent, and companies needed it, but there was no trusted bridge connecting the two.</p>
+                </div>
+            </div>
+
+            <!-- Mission Section -->
+            <div class="content-section">
+                <h2 class="section-title">My Mission: Validate the Bridge</h2>
+                <p class="section-content">
+                    My job wasn't to build the bridge immediately. It was to prove that we should build it, and exactly how to build it right. I had to de-risk this big bet.
+                </p>
+                
+                <div class="user-groups">
+                    <div class="user-group">
+                        <div class="user-icon"><i class="fas fa-user-graduate"></i></div>
+                        <h3 class="user-title">Students</h3>
+                        <p class="user-content">"I apply to hundreds of jobs but never hear back. Entry-level jobs want 2+ years of experience. I feel lost in the system."</p>
+                    </div>
+                    
+                    <div class="user-group">
+                        <div class="user-icon"><i class="fas fa-briefcase"></i></div>
+                        <h3 class="user-title">Recruiters</h3>
+                        <p class="user-content">"We get hundreds of applications but few qualified candidates. Sifting through resumes is time-consuming and inefficient."</p>
+                    </div>
+                    
+                    <div class="user-group">
+                        <div class="user-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                        <h3 class="user-title">Instructors</h3>
+                        <p class="user-content">"Our graduates have the skills but struggle to find relevant opportunities. We need a better way to connect them with employers."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Process Section -->
+            <div class="content-section">
+                <h2 class="section-title">The Process: From Hypothesis to Blueprint</h2>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Listening to All Three Sides</h3>
+                        <p class="step-content">I became an interviewer. I didn't just guess what users wanted; I asked them. I talked to 12 students about job search anxiety, 7 instructors about graduate outcomes, and 5 recruiters about hiring headaches. The insight was unanimous: everyone was tired of the noise.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Crafting the Vision</h3>
+                        <p class="step-content">I defined the product's north star: to become the trusted pipeline that connects Skill Flex graduates directly to the right opportunities, making hiring seamless for our partners. This wasn't another job board; it was a curated community.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">The Art of Prioritization</h3>
+                        <p class="step-content">A three-sided platform is complex. My most important job was to decide what not to build first. I focused on the core MVP: students finding jobs, recruiters posting jobs, and institutions tracking placements. Everything else was saved for V2.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3 class="step-title">Bringing the Vision to Life</h3>
+                        <p class="step-content">I started with napkin sketches—mapping the journey for a student applying to a job and a recruiter posting one. Then, I partnered with a UI/UX designer to create a beautiful, clickable prototype in Figma that became our most important communication tool.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prototype Showcase -->
+            <div class="prototype-showcase">
+                <h3 class="section-title">Interactive Prototype</h3>
+                <p class="section-content">The high-fidelity prototype that made the vision feel real and secured stakeholder buy-in.</p>
+                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Job Board Prototype" class="prototype-image">
+                <p class="section-content">This prototype wasn't just a design; it was a communication tool that got everyone—from founders to engineers—literally on the same page.</p>
+            </div>
+
+            <!-- Outcome Section -->
+            <div class="content-section">
+                <h2 class="section-title">The Outcome: Clarity Over Code</h2>
+                <p class="section-content">
+                    While the full-scale development was paused to focus on the core academy, the project was a resounding success because it achieved its true goal: de-risking.
+                </p>
+                
+                <div class="outcome-grid">
+                    <div class="outcome-card">
+                        <div class="outcome-icon"><i class="fas fa-check-circle"></i></div>
+                        <h3 class="outcome-title">Validated the Need</h3>
+                        <p class="outcome-content">Our research proved that students, recruiters, and instructors were all desperate for a solution like this.</p>
+                    </div>
+                    
+                    <div class="outcome-card">
+                        <div class="outcome-icon"><i class="fas fa-users"></i></div>
+                        <h3 class="outcome-title">Aligned the Entire Company</h3>
+                        <p class="outcome-content">The prototype got everyone excited about the same vision, eliminating misalignment.</p>
+                    </div>
+                    
+                    <div class="outcome-card">
+                        <div class="outcome-icon"><i class="fas fa-clock"></i></div>
+                        <h3 class="outcome-title">Saved Time and Money</h3>
+                        <p class="outcome-content">Prevented the engineering team from building the wrong thing, eliminating wasted effort.</p>
+                    </div>
+                    
+                    <div class="outcome-card">
+                        <div class="outcome-icon"><i class="fas fa-handshake"></i></div>
+                        <h3 class="outcome-title">Built Trust with Partners</h3>
+                        <p class="outcome-content">Hiring partners were thrilled to see we were building a dedicated solution for them.</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-box">
+                    <p>The final deliverable was a complete strategic package: a high-fidelity prototype, detailed PRD, and validated buy-in from every stakeholder. This was the blueprint for the "Skill Flex Job Board"—a curated platform designed to make hiring and getting hired frictionless.</p>
+                </div>
+            </div>
+
+            <!-- Lessons Section -->
+            <div class="content-section">
+                <h2 class="section-title">What This Experience Taught Me</h2>
+                <p class="section-content">
+                    <strong>The Best Code is Sometimes No Code.</strong> The most strategic product work often happens before any programming begins. A well-researched prototype and PRD are incredibly powerful tools that prevent costly mistakes.
+                </p>
+                <p class="section-content">
+                    <strong>A PM is a Translator.</strong> My job was to translate the frustrations of students, recruiters, and instructors into a single, coherent product vision that engineers could build and executives could believe in.
+                </p>
+                <p class="section-content">
+                    <strong>Pausing is Not Failure.</strong> Knowing when to pause a project to focus on core business is a sign of strategic strength, not weakness. This project delivered immense value by providing clarity and a path forward for when the time is right.
+                </p>
+                <div class="highlight-box">
+                    <p>This project is a testament to the power of strategic product management. It's not just about building things right; it's about figuring out the right thing to build first.</p>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h2 class="cta-title">Explore the Job Board Strategy</h2>
+                <p class="section-content">See how we validated a three-sided marketplace before writing a single line of code.</p>
+                
+                <div class="cta-buttons">
+                    <a href="#" class="cta-button primary">
+                        <i class="fas fa-external-link-alt"></i> View Prototype
+                    </a>
+                    <a href="index.html#projects" class="cta-button secondary">
+                        <i class="fas fa-arrow-left"></i> Back to Portfolio
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <a href="index.html" class="footer-logo"><i class="fas fa-robot"></i> Avinash Kumar</a>
+                
+                <div class="footer-links">
+                    <a href="index.html#home">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#projects">Projects</a>
+                    <a href="index.html#experience">Experience</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/avinashkumar-pm/" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/Avinash79py" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Avinash Kumar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            }
+        });
+        
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.user-group, .process-step, .outcome-card');
+            animateElements.forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, 300 + (index * 100));
+            });
+        });
+    </script>
+</body>
+</html>
