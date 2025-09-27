@@ -934,82 +934,53 @@
     </footer>
 
     <script>
-               // Header scroll effect
-            window.addEventListener('scroll', function() {
-                const header = document.querySelector('header');
-                if (window.scrollY > 50) {
-                    header.style.background = 'var(--dark-gradient)';
-                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-                } else {
-                    header.style.background = 'var(--dark-gradient)';
-                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-                }
-            });
-            
-            // Enhanced animations for all sections
-            const animateElements = document.querySelectorAll('.intro-text, .section-title, .description, .section-subtitle, .metrics-container, .trusted-by, .cta-buttons, .skills-container, .strengths-container, .projects-grid, .timeline-item, .recommendations-grid, .contact-options');
-            animateElements.forEach((element, index) => {
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(20px)';
-                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                
-                setTimeout(() => {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }, 150 + (index * 100));
-            });
-            
-            // Add hover effect to interactive elements
-            const interactiveItems = document.querySelectorAll('.metric, .company-logo, .skill-category, .strength-item, .project-card, .timeline-item, .recommendation-card');
-            interactiveItems.forEach(item => {
-                item.addEventListener('mouseenter', () => {
-                    item.style.transform = 'translateY(-5px)';
-                });
-                
-                item.addEventListener('mouseleave', () => {
-                    item.style.transform = 'translateY(0)';
-                });
-            });
-            
-            // Add hover effect to buttons
-            const buttons = document.querySelectorAll('.cta-button, .contact-button');
-            buttons.forEach(button => {
-                button.addEventListener('mouseenter', () => {
-                    button.style.transform = 'translateY(-3px)';
-                });
-                
-                button.addEventListener('mouseleave', () => {
-                    button.style.transform = 'translateY(0)';
-                });
-            });
-            
-            // Active navigation highlighting
-            const sections = document.querySelectorAll('section');
-            const navItems = document.querySelectorAll('nav a');
-            
-            function highlightNav() {
-                let current = '';
-                const scrollPos = window.scrollY + 100;
-                
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    
-                    if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                        current = section.getAttribute('id');
-                    }
-                });
-                
-                navItems.forEach(item => {
-                    item.classList.remove('active');
-                    if (item.getAttribute('href').substring(1) === current) {
-                        item.classList.add('active');
-                    }
-                });
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'var(--dark-gradient)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'var(--dark-gradient)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
             }
+        });
+        
+        // Enhanced animations for all sections
+        const animateElements = document.querySelectorAll('.section-title, .section-content, .process-step, .metric-card, .link-card, .project-card');
+        animateElements.forEach((element, index) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
             
-            window.addEventListener('scroll', highlightNav);
-            window.addEventListener('load', highlightNav);
+            setTimeout(() => {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }, 150 + (index * 100));
+        });
+        
+        // Add hover effect to interactive elements
+        const interactiveItems = document.querySelectorAll('.metric-card, .link-card, .project-card, .process-step');
+        interactiveItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateY(-5px)';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Add hover effect to buttons
+        const buttons = document.querySelectorAll('.cta-button');
+        buttons.forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                button.style.transform = 'translateY(-3px)';
+            });
+            
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = 'translateY(0)';
+            });
         });
     </script>
 </body>
