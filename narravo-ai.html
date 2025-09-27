@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Narravo AI - AI-Powered Resume Builder | Avinash Kumar</title>
+    <title>Narravo AI - AI-Powered Resume Builder | Avinash K.</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,20 +14,20 @@
             font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        
         :root {
-            --primary: #2563EB;
-            --secondary: #7C3AED;
-            --accent: #3B82F6;
-            --dark: #1E293B;
-            --light: #F8FAFC;
-            --text: #64748B;
-            --text-dark: #334155;
+            --primary: #6C63FF;
+            --secondary: #FF6584;
+            --accent: #36D1DC;
+            --dark: #1A1D29;
+            --darker: #12141C;
+            --light: #F8F9FF;
+            --text: #5A6376;
+            --text-dark: #2D3748;
             --white: #FFFFFF;
-            --gradient: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
-            --shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-            --radius: 16px;
+            --gradient: linear-gradient(135deg, #6C63FF 0%, #36D1DC 100%);
+            --dark-gradient: linear-gradient(135deg, #1A1D29 0%, #12141C 100%);
+            --shadow: 0 10px 30px rgba(108, 99, 255, 0.1);
+            --radius: 12px;
         }
         
         html {
@@ -34,7 +35,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            background: #F8F9FF;
             color: var(--text-dark);
             line-height: 1.6;
             overflow-x: hidden;
@@ -54,7 +55,7 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
+            background: var(--dark-gradient);
             backdrop-filter: blur(10px);
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
@@ -72,30 +73,30 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 800;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: var(--white);
             text-decoration: none;
             display: flex;
             align-items: center;
+            font-family: 'Playfair Display', serif;
         }
         
         .logo i {
             margin-right: 10px;
             font-size: 1.5rem;
+            color: var(--accent);
         }
         
         .back-button {
             display: inline-flex;
             align-items: center;
-            color: var(--primary);
+            color: var(--white);
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
             padding: 10px 20px;
             border-radius: 50px;
             border: 2px solid var(--primary);
+            background: rgba(108, 99, 255, 0.1);
         }
         
         .back-button:hover {
@@ -108,50 +109,55 @@
             margin-right: 8px;
         }
         
-        /* Hero Section */
+        /* Hero Section - Updated with background image */
         .project-hero {
-            padding: 150px 0 80px;
+            padding: 180px 0 100px;
             text-align: center;
-            background: var(--white);
-            box-shadow: var(--shadow);
             margin-top: 70px;
             position: relative;
             overflow: hidden;
+            background: linear-gradient(rgba(26, 29, 41, 0.8), rgba(26, 29, 41, 0.9)), url('https://i.ibb.co/hNpTMgs/Screenshot-2025-09-27-101451.png') center/cover no-repeat;
+            color: var(--white);
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .project-hero-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 0 20px;
+            position: relative;
+            z-index: 2;
         }
         
         .project-badge {
             display: inline-block;
-            background: rgba(37, 99, 235, 0.1);
-            color: var(--primary);
-            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            padding: 10px 25px;
             border-radius: 50px;
             font-weight: 600;
             margin-bottom: 20px;
             font-size: 1rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .project-title {
             font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 800;
             margin-bottom: 20px;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
             line-height: 1.1;
+            font-family: 'Playfair Display', serif;
         }
         
         .project-subtitle {
             font-size: 1.5rem;
-            color: var(--text);
             margin-bottom: 30px;
             line-height: 1.6;
+            opacity: 0.9;
         }
         
         .project-meta {
@@ -170,32 +176,19 @@
         
         .meta-label {
             font-size: 0.9rem;
-            color: var(--text);
+            opacity: 0.8;
             margin-bottom: 5px;
         }
         
         .meta-value {
             font-size: 1.1rem;
             font-weight: 700;
-            color: var(--dark);
-        }
-        
-        .project-image {
-            margin-top: 50px;
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-        
-        .project-image img {
-            width: 100%;
-            height: auto;
-            display: block;
         }
         
         /* Project Content */
         .project-content {
             padding: 80px 0;
+            background: var(--white);
         }
         
         .content-section {
@@ -209,6 +202,7 @@
             color: var(--dark);
             position: relative;
             padding-bottom: 15px;
+            font-family: 'Playfair Display', serif;
         }
         
         .section-title::after {
@@ -252,10 +246,10 @@
         }
         
         .process-step {
-            background: var(--white);
+            background: var(--light);
             padding: 30px;
             border-radius: var(--radius);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: var(--shadow);
             transition: all 0.3s ease;
             border: 1px solid #E2E8F0;
         }
@@ -298,11 +292,11 @@
         }
         
         .metric-card {
-            background: var(--white);
+            background: var(--light);
             padding: 30px;
             border-radius: var(--radius);
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: var(--shadow);
             transition: all 0.3s ease;
             border: 1px solid #E2E8F0;
         }
@@ -338,6 +332,7 @@
             font-weight: 700;
             margin-bottom: 20px;
             color: var(--dark);
+            font-family: 'Playfair Display', serif;
         }
         
         .cta-buttons {
@@ -362,12 +357,12 @@
         .cta-button.primary {
             background: var(--gradient);
             color: white;
-            box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 6px 15px rgba(108, 99, 255, 0.3);
         }
         
         .cta-button.primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 10px 25px rgba(108, 99, 255, 0.4);
         }
         
         .cta-button.secondary {
@@ -385,9 +380,143 @@
             margin-right: 10px;
         }
         
+        /* Project Links Section */
+        .project-links {
+            background: var(--white);
+            padding: 60px 0;
+        }
+        
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .link-card {
+            background: var(--light);
+            padding: 25px;
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+            border: 1px solid #E2E8F0;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary);
+        }
+        
+        .link-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .link-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .link-description {
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        /* Other Projects Section */
+        .other-projects {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .project-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #E2E8F0;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+        
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+        
+        .project-card-content {
+            padding: 25px;
+        }
+        
+        .project-card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        
+        .project-card-subtitle {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .project-card-description {
+            color: var(--text);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .project-card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .project-card-tag {
+            background: rgba(108, 99, 255, 0.1);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
         /* Footer */
         footer {
-            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            background: var(--dark-gradient);
             color: #e2e8f0;
             padding: 60px 0 30px;
             text-align: center;
@@ -410,17 +539,16 @@
         .footer-logo {
             font-size: 2rem;
             font-weight: 800;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: var(--white);
             text-decoration: none;
             display: flex;
             align-items: center;
+            font-family: 'Playfair Display', serif;
         }
         
         .footer-logo i {
             margin-right: 10px;
+            color: var(--accent);
         }
         
         .footer-links {
@@ -437,7 +565,7 @@
         }
         
         .footer-links a:hover {
-            color: var(--primary);
+            color: var(--accent);
         }
         
         .social-links {
@@ -475,7 +603,8 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .project-hero {
-                padding: 120px 0 60px;
+                padding: 150px 0 80px;
+                min-height: 70vh;
             }
             
             .project-meta {
@@ -500,6 +629,14 @@
                 width: 100%;
                 max-width: 300px;
                 justify-content: center;
+            }
+            
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
             
             .footer-links {
@@ -531,7 +668,7 @@
     <!-- Header -->
     <header>
         <div class="header-container">
-            <a href="index.html" class="logo"><i class="fas fa-robot"></i> Avinash Kumar</a>
+            <a href="index.html" class="logo"><i class="fas fa-rocket"></i> Avinash K.</a>
             <a href="index.html#projects" class="back-button"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
         </div>
     </header>
@@ -539,28 +676,9 @@
     <!-- Hero Section -->
     <section class="project-hero">
         <div class="project-hero-content">
-            <span class="project-badge">AI Product • Solo Founder • 0-to-1 Launch</span>
+            <span class="project-badge">AI Product • Product Owner • 0-to-1 Launch</span>
             <h1 class="project-title">Narravo AI</h1>
-            <p class="project-subtitle">The 5-Minute Resume That Feels Like Magic</p>
-            
-            <div class="project-meta">
-                <div class="meta-item">
-                    <span class="meta-label">Role</span>
-                    <span class="meta-value">Solo Founder & Product Manager</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-label">Timeline</span>
-                    <span class="meta-value">2023 - Present</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-label">Status</span>
-                    <span class="meta-value">Live Product</span>
-                </div>
-            </div>
-            
-            <div class="project-image">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Narravo AI Interface">
-            </div>
+            <p class="project-subtitle">The 5-Minute Job Documents Creator That Feels Like Magic</p>
         </div>
     </section>
 
@@ -571,13 +689,13 @@
             <div class="content-section">
                 <h2 class="section-title">The Problem: A Nightmare in a Google Doc</h2>
                 <p class="section-content">
-                    It all started with my friend, let's call her Sarah. She was trying to leave her retail job for a career in marketing.
+                    It all started with my friend, let's call him. He was trying to leave his retail job for a career in marketing.
                 </p>
                 <p class="section-content">
-                    I watched her spend a full Saturday afternoon staring at a blank Google Doc. She was stressed, deleting sentences, and copying outdated templates. The worst part? She knew she was a hard worker with great skills, but she had absolutely no idea how to say it. Every time she heard the term "ATS," she felt like the system was designed to keep her out.
+                    I watched him spend a full Saturday afternoon staring at a blank Google Doc. He was stressed, deleting sentences, and copying outdated templates. The worst part? He knew he was a hard worker with great skills, but he had absolutely no idea how to say it. Every time he heard the term "ATS," he felt like the system was designed to keep him out.
                 </p>
                 <div class="highlight-box">
-                    <p>I realized Sarah wasn't alone. This was a silent nightmare for millions of non-technical job seekers. The existing tools either cost too much, were too complicated, or just... didn't work. They needed a guide, not another gate.</p>
+                    <p>I realized he wasn't alone. This was a silent nightmare for millions of non-technical job seekers. The existing tools either cost too much, were too complicated, or just... didn't work. They needed a guide, not another gate.</p>
                 </div>
             </div>
 
@@ -592,7 +710,7 @@
                     <div class="process-step">
                         <div class="step-number">1</div>
                         <h3 class="step-title">Listening to the Pain</h3>
-                        <p class="step-content">I didn't assume I knew the answer. I talked to over 15 people who were exactly where Sarah was. The stories were all the same: "I don't know what words to use," "Formatting makes me want to scream," and "I apply and never hear back." This empathy became my fuel.</p>
+                        <p class="step-content">I didn't assume I knew the answer. I talked to over 15 people who were exactly where he was. The stories were all the same: "I don't know what words to use," "Formatting makes me want to scream," and "I apply and never hear back." This empathy became my fuel.</p>
                     </div>
                     
                     <div class="process-step">
@@ -625,7 +743,7 @@
             <div class="content-section">
                 <h2 class="section-title">The Solution</h2>
                 <p class="section-content">
-                    Narravo AI is the resume co-pilot I wish Sarah had. You answer a few simple questions about your work history as if you're talking to a friend. A few moments later, your inbox has a beautiful, professionally formatted, and deeply ATS-optimized PDF. No sign-up. No cost. No headache.
+                    Narravo AI is the resume co-pilot I wish he had. You answer a few simple questions about your work history as if you're talking to a friend. A few moments later, your inbox has a beautiful, professionally formatted, and deeply ATS-optimized PDF. No sign-up. No cost. No headache.
                 </p>
             </div>
 
@@ -640,14 +758,6 @@
                     <div class="metric-card">
                         <div class="metric-value">85%</div>
                         <div class="metric-label">Less Time Stressing</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-value">50%</div>
-                        <div class="metric-label">Completion Rate</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-value">100+</div>
-                        <div class="metric-label">Users Helped</div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-value">5 min</div>
@@ -677,13 +787,63 @@
                 </div>
             </div>
 
+            <!-- Project Links Section -->
+            <div class="content-section project-links">
+                <h2 class="section-title">Project Documentation & Resources</h2>
+                <p class="section-content">Explore the complete documentation and resources that guided the development of Narravo AI.</p>
+                
+                <div class="links-grid">
+                    <a href="https://narravo-ai.framer.website/" target="_blank" class="link-card">
+                        <div class="link-icon"><i class="fas fa-external-link-alt"></i></div>
+                        <h3 class="link-title">Live Product</h3>
+                        <p class="link-description">Experience Narravo AI firsthand and see how it transforms resume creation.</p>
+                    </a>
+                    
+                    <a href="https://docs.google.com/document/d/1Q6a5WgSqwl6-o2_YGJpPysF1KgkREuEc5GBY-CDwupg/edit?usp=drive_link" target="_blank" class="link-card">
+                        <div class="link-icon"><i class="fas fa-file-alt"></i></div>
+                        <h3 class="link-title">Project Brief</h3>
+                        <p class="link-description">Comprehensive overview of the project goals, target audience, and success metrics.</p>
+                    </a>
+                    
+                    <a href="https://docs.google.com/spreadsheets/d/1EwdqoxJ0mrPdUsvclfN85D9q2tcCDLOhuaSGlM6E39w/edit?usp=sharing" target="_blank" class="link-card">
+                        <div class="link-icon"><i class="fas fa-list-check"></i></div>
+                        <h3 class="link-title">Minimum Lovable Product</h3>
+                        <p class="link-description">Detailed breakdown of features prioritized for the initial product launch.</p>
+                    </a>
+                    
+                    <a href="https://www.figma.com/make/DHd77PSeLqPlvQ3P4yfSBD/Hero-Section-Wireframe?node-id=0-1&t=HdSvh4g4mNBPAFNM-1" target="_blank" class="link-card">
+                        <div class="link-icon"><i class="fas fa-palette"></i></div>
+                        <h3 class="link-title">Figma Wireframe</h3>
+                        <p class="link-description">Interactive design prototypes and user interface mockups.</p>
+                    </a>
+                    
+                    <a href="https://miro.com/app/live-embed/uXjVJFObIt4=/?focusWidget=3458764641252594200&embedMode=view_only_without_ui&embedId=872872890770" target="_blank" class="link-card">
+                        <div class="link-icon"><i class="fas fa-project-diagram"></i></div>
+                        <h3 class="link-title">System Architecture</h3>
+                        <p class="link-description">Technical blueprint showing how different components interact.</p>
+                    </a>
+                    
+                    <a href="https://docs.google.com/document/d/1td6AwCJD1RV5NYH_dwMmH7_BBi36lpq_W23tPzAUve8/edit?usp=drive_link" target="_blank" class="link-card">
+                        <div class="link-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3 class="link-title">Launch Metrics & Feedback</h3>
+                        <p class="link-description">Post-launch performance data and user feedback analysis.</p>
+                    </a>
+                    
+                    <a href="https://docs.google.com/document/d/1b8TUU-cda57Ed0uU2VcoJRIpx74Z-7fIab5HOE7ij2M/edit?usp=sharing" target="_blank" class="link-card">
+                        <div class="link-icon"><i class="fas fa-seedling"></i></div>
+                        <h3 class="link-title">Growth & Feedback Strategy</h3>
+                        <p class="link-description">Planned approach for user acquisition and product iteration.</p>
+                    </a>
+                </div>
+            </div>
+
             <!-- CTA Section -->
             <div class="cta-section">
                 <h2 class="cta-title">Experience Narravo AI Yourself</h2>
                 <p class="section-content">Try the live product and see how it transforms resume building from a chore into a conversation.</p>
                 
                 <div class="cta-buttons">
-                    <a href="https://narravo-ai.framer.website" target="_blank" class="cta-button primary">
+                    <a href="https://narravo-ai.framer.website/" target="_blank" class="cta-button primary">
                         <i class="fas fa-external-link-alt"></i> Try Narravo AI
                     </a>
                     <a href="index.html#projects" class="cta-button secondary">
@@ -694,11 +854,57 @@
         </section>
     </div>
 
+    <!-- Other Projects Section -->
+    <section class="other-projects">
+        <div class="container">
+            <h2 class="section-title">Explore More Projects</h2>
+            <p class="section-content">Check out my other product management projects and case studies.</p>
+            
+            <div class="projects-grid">
+                <a href="skillflex-academy.html" class="project-card">
+                    <div class="project-image">
+                        <img src="https://i.ibb.co/cXvp7L9x/Skill-Flex-Academy.png" alt="Skill Flex Academy">
+                    </div>
+                    <div class="project-card-content">
+                        <h3 class="project-card-title">Skill Flex Academy</h3>
+                        <span class="project-card-subtitle">Hybrid Learning Platform</span>
+                        <p class="project-card-description">
+                            Validated a risky new business model for tier 2/3 cities by launching a real, functioning academy using no-code tools and a deep understanding of user needs.
+                        </p>
+                        <div class="project-card-tags">
+                            <span class="project-card-tag">EdTech</span>
+                            <span class="project-card-tag">MVP Validation</span>
+                            <span class="project-card-tag">Growth Strategy</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="skillflex-jobboard.html" class="project-card">
+                    <div class="project-image">
+                        <img src="https://i.ibb.co/93Nntjwn/Skill-Flex-Job-Board.png" alt="Skill Flex Job Board">
+                    </div>
+                    <div class="project-card-content">
+                        <h3 class="project-card-title">Skill Flex Job Board</h3>
+                        <span class="project-card-subtitle">Three-Sided Marketplace</span>
+                        <p class="project-card-description">
+                            Validated a complex marketplace connecting graduates with employers through strategic research, prototyping, and stakeholder alignment before development.
+                        </p>
+                        <div class="project-card-tags">
+                            <span class="project-card-tag">Marketplace</span>
+                            <span class="project-card-tag">Product Strategy</span>
+                            <span class="project-card-tag">Prototyping</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-content">
-                <a href="index.html" class="footer-logo"><i class="fas fa-robot"></i> Avinash Kumar</a>
+                <a href="index.html" class="footer-logo"><i class="fas fa-rocket"></i> Avinash K.</a>
                 
                 <div class="footer-links">
                     <a href="index.html#home">Home</a>
@@ -715,31 +921,33 @@
                     <a href="https://github.com/Avinash79py" class="social-link" target="_blank">
                         <i class="fab fa-github"></i>
                     </a>
+                    <a href="https://avichandra.medium.com/" class="social-link" target="_blank">
+                        <i class="fab fa-medium"></i>
+                    </a>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Avinash Kumar. All rights reserved.</p>
+                <p>&copy; 2025 Avinash Kumar. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-            }
-        });
-        
-        // Animation on scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const animateElements = document.querySelectorAll('.process-step, .metric-card');
+               // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 50) {
+                    header.style.background = 'var(--dark-gradient)';
+                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                } else {
+                    header.style.background = 'var(--dark-gradient)';
+                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                }
+            });
+            
+            // Enhanced animations for all sections
+            const animateElements = document.querySelectorAll('.intro-text, .section-title, .description, .section-subtitle, .metrics-container, .trusted-by, .cta-buttons, .skills-container, .strengths-container, .projects-grid, .timeline-item, .recommendations-grid, .contact-options');
             animateElements.forEach((element, index) => {
                 element.style.opacity = '0';
                 element.style.transform = 'translateY(20px)';
@@ -748,8 +956,60 @@
                 setTimeout(() => {
                     element.style.opacity = '1';
                     element.style.transform = 'translateY(0)';
-                }, 300 + (index * 100));
+                }, 150 + (index * 100));
             });
+            
+            // Add hover effect to interactive elements
+            const interactiveItems = document.querySelectorAll('.metric, .company-logo, .skill-category, .strength-item, .project-card, .timeline-item, .recommendation-card');
+            interactiveItems.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    item.style.transform = 'translateY(-5px)';
+                });
+                
+                item.addEventListener('mouseleave', () => {
+                    item.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Add hover effect to buttons
+            const buttons = document.querySelectorAll('.cta-button, .contact-button');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', () => {
+                    button.style.transform = 'translateY(-3px)';
+                });
+                
+                button.addEventListener('mouseleave', () => {
+                    button.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Active navigation highlighting
+            const sections = document.querySelectorAll('section');
+            const navItems = document.querySelectorAll('nav a');
+            
+            function highlightNav() {
+                let current = '';
+                const scrollPos = window.scrollY + 100;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href').substring(1) === current) {
+                        item.classList.add('active');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', highlightNav);
+            window.addEventListener('load', highlightNav);
         });
     </script>
 </body>
