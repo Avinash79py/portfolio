@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skill Flex Academy - Hybrid Learning Platform | Avinash Kumar</title>
+    <title>Skill Flex Academy - Hybrid Learning Platform | Avinash K.</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,20 +14,20 @@
             font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        
         :root {
-            --primary: #2563EB;
-            --secondary: #7C3AED;
-            --accent: #3B82F6;
-            --dark: #1E293B;
-            --light: #F8FAFC;
-            --text: #64748B;
-            --text-dark: #334155;
+            --primary: #6C63FF;
+            --secondary: #FF6584;
+            --accent: #36D1DC;
+            --dark: #1A1D29;
+            --darker: #12141C;
+            --light: #F8F9FF;
+            --text: #5A6376;
+            --text-dark: #2D3748;
             --white: #FFFFFF;
-            --gradient: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
-            --shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-            --radius: 16px;
+            --gradient: linear-gradient(135deg, #6C63FF 0%, #36D1DC 100%);
+            --dark-gradient: linear-gradient(135deg, #1A1D29 0%, #12141C 100%);
+            --shadow: 0 10px 30px rgba(108, 99, 255, 0.1);
+            --radius: 12px;
         }
         
         html {
@@ -34,7 +35,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            background: #F8F9FF;
             color: var(--text-dark);
             line-height: 1.6;
             overflow-x: hidden;
@@ -54,7 +55,7 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
+            background: var(--dark-gradient);
             backdrop-filter: blur(10px);
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
@@ -72,30 +73,30 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 800;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: var(--white);
             text-decoration: none;
             display: flex;
             align-items: center;
+            font-family: 'Playfair Display', serif;
         }
         
         .logo i {
             margin-right: 10px;
             font-size: 1.5rem;
+            color: var(--accent);
         }
         
         .back-button {
             display: inline-flex;
             align-items: center;
-            color: var(--primary);
+            color: var(--white);
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
             padding: 10px 20px;
             border-radius: 50px;
             border: 2px solid var(--primary);
+            background: rgba(108, 99, 255, 0.1);
         }
         
         .back-button:hover {
@@ -108,94 +109,61 @@
             margin-right: 8px;
         }
         
-        /* Hero Section */
+        /* Hero Section - Updated with background image */
         .project-hero {
-            padding: 150px 0 80px;
+            padding: 180px 0 100px;
             text-align: center;
-            background: var(--white);
-            box-shadow: var(--shadow);
             margin-top: 70px;
             position: relative;
             overflow: hidden;
+            background: linear-gradient(rgba(26, 29, 41, 0.8), rgba(26, 29, 41, 0.9)), url('https://i.ibb.co/dwHm6dd5/Screenshot-2025-09-27-113611.png') center/cover no-repeat;
+            color: var(--white);
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .project-hero-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 0 20px;
+            position: relative;
+            z-index: 2;
         }
         
         .project-badge {
             display: inline-block;
-            background: rgba(37, 99, 235, 0.1);
-            color: var(--primary);
-            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            padding: 10px 25px;
             border-radius: 50px;
             font-weight: 600;
             margin-bottom: 20px;
             font-size: 1rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .project-title {
             font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 800;
             margin-bottom: 20px;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
             line-height: 1.1;
+            font-family: 'Playfair Display', serif;
         }
         
         .project-subtitle {
             font-size: 1.5rem;
-            color: var(--text);
             margin-bottom: 30px;
             line-height: 1.6;
-        }
-        
-        .project-meta {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-        }
-        
-        .meta-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .meta-label {
-            font-size: 0.9rem;
-            color: var(--text);
-            margin-bottom: 5px;
-        }
-        
-        .meta-value {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--dark);
-        }
-        
-        .project-image {
-            margin-top: 50px;
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-        
-        .project-image img {
-            width: 100%;
-            height: auto;
-            display: block;
+            opacity: 0.9;
         }
         
         /* Project Content */
         .project-content {
             padding: 80px 0;
+            background: var(--white);
         }
         
         .content-section {
@@ -209,6 +177,7 @@
             color: var(--dark);
             position: relative;
             padding-bottom: 15px;
+            font-family: 'Playfair Display', serif;
         }
         
         .section-title::after {
@@ -244,38 +213,6 @@
             color: var(--dark);
         }
         
-        .quote-box {
-            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-            color: white;
-            padding: 40px;
-            border-radius: var(--radius);
-            margin: 40px 0;
-            position: relative;
-        }
-        
-        .quote-box::before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            left: 30px;
-            font-size: 4rem;
-            color: rgba(255, 255, 255, 0.2);
-            font-family: Georgia, serif;
-        }
-        
-        .quote-text {
-            font-size: 1.3rem;
-            font-style: italic;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .quote-author {
-            font-weight: 600;
-            text-align: right;
-        }
-        
         .process-steps {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -284,10 +221,10 @@
         }
         
         .process-step {
-            background: var(--white);
+            background: var(--light);
             padding: 30px;
             border-radius: var(--radius);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: var(--shadow);
             transition: all 0.3s ease;
             border: 1px solid #E2E8F0;
         }
@@ -323,11 +260,11 @@
         }
         
         .metric-card {
-            background: var(--white);
+            background: var(--light);
             padding: 30px;
             border-radius: var(--radius);
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: var(--shadow);
             transition: all 0.3s ease;
             border: 1px solid #E2E8F0;
         }
@@ -358,7 +295,7 @@
         }
         
         .tech-item {
-            background: rgba(37, 99, 235, 0.1);
+            background: rgba(108, 99, 255, 0.1);
             color: var(--primary);
             padding: 10px 20px;
             border-radius: 50px;
@@ -378,6 +315,7 @@
             font-weight: 700;
             margin-bottom: 20px;
             color: var(--dark);
+            font-family: 'Playfair Display', serif;
         }
         
         .cta-buttons {
@@ -402,12 +340,12 @@
         .cta-button.primary {
             background: var(--gradient);
             color: white;
-            box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 6px 15px rgba(108, 99, 255, 0.3);
         }
         
         .cta-button.primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 10px 25px rgba(108, 99, 255, 0.4);
         }
         
         .cta-button.secondary {
@@ -425,9 +363,143 @@
             margin-right: 10px;
         }
         
+        /* Project Links Section */
+        .project-links {
+            background: var(--white);
+            padding: 60px 0;
+        }
+        
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .link-card {
+            background: var(--light);
+            padding: 25px;
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+            border: 1px solid #E2E8F0;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary);
+        }
+        
+        .link-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .link-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .link-description {
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        /* Other Projects Section */
+        .other-projects {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .project-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #E2E8F0;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+        
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+        
+        .project-card-content {
+            padding: 25px;
+        }
+        
+        .project-card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        
+        .project-card-subtitle {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .project-card-description {
+            color: var(--text);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .project-card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .project-card-tag {
+            background: rgba(108, 99, 255, 0.1);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
         /* Footer */
         footer {
-            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            background: var(--dark-gradient);
             color: #e2e8f0;
             padding: 60px 0 30px;
             text-align: center;
@@ -450,17 +522,16 @@
         .footer-logo {
             font-size: 2rem;
             font-weight: 800;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: var(--white);
             text-decoration: none;
             display: flex;
             align-items: center;
+            font-family: 'Playfair Display', serif;
         }
         
         .footer-logo i {
             margin-right: 10px;
+            color: var(--accent);
         }
         
         .footer-links {
@@ -477,7 +548,7 @@
         }
         
         .footer-links a:hover {
-            color: var(--primary);
+            color: var(--accent);
         }
         
         .social-links {
@@ -515,12 +586,8 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .project-hero {
-                padding: 120px 0 60px;
-            }
-            
-            .project-meta {
-                flex-direction: column;
-                gap: 15px;
+                padding: 150px 0 80px;
+                min-height: 70vh;
             }
             
             .process-steps {
@@ -540,6 +607,14 @@
                 width: 100%;
                 max-width: 300px;
                 justify-content: center;
+            }
+            
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
             
             .footer-links {
@@ -564,10 +639,6 @@
             .section-content {
                 font-size: 1rem;
             }
-            
-            .quote-text {
-                font-size: 1.1rem;
-            }
         }
     </style>
 </head>
@@ -575,7 +646,7 @@
     <!-- Header -->
     <header>
         <div class="header-container">
-            <a href="index.html" class="logo"><i class="fas fa-robot"></i> Avinash Kumar</a>
+            <a href="index.html" class="logo"><i class="fas fa-rocket"></i> Avinash K.</a>
             <a href="index.html#projects" class="back-button"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
         </div>
     </header>
@@ -585,26 +656,7 @@
         <div class="project-hero-content">
             <span class="project-badge">EdTech • MVP Validation • Growth Strategy</span>
             <h1 class="project-title">Skill Flex Academy</h1>
-            <p class="project-subtitle">The Pilot That Proved a Point</p>
-            
-            <div class="project-meta">
-                <div class="meta-item">
-                    <span class="meta-label">Role</span>
-                    <span class="meta-value">Product Manager & Strategist</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-label">Timeline</span>
-                    <span class="meta-value">2024</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-label">Status</span>
-                    <span class="meta-value">Pilot Completed</span>
-                </div>
-            </div>
-            
-            <div class="project-image">
-                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Skill Flex Academy">
-            </div>
+            <p class="project-subtitle">Validating a Hybrid Learning Model for Tier 2/3 Cities</p>
         </div>
     </section>
 
@@ -653,12 +705,6 @@
                 </div>
             </div>
 
-            <!-- Quote Section -->
-            <div class="quote-box">
-                <p class="quote-text">The best feedback? A parent called us to thank them for the "personal touch." They'd heard about us from a friend. We had built trust.</p>
-                <p class="quote-author">- Skill Flex Academy Parent</p>
-            </div>
-
             <!-- Results Section -->
             <div class="content-section">
                 <h2 class="section-title">What We Shipped & Learned</h2>
@@ -674,10 +720,6 @@
                     <div class="metric-card">
                         <div class="metric-value">20</div>
                         <div class="metric-label">Committed Students</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-value">100%</div>
-                        <div class="metric-label">Parent Satisfaction</div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-value">1</div>
@@ -707,6 +749,38 @@
                 </div>
             </div>
 
+            <!-- Project Links Section -->
+            <div class="content-section project-links">
+                <h2 class="section-title">Project Documentation & Resources</h2>
+                <p class="section-content">Explore the complete documentation and resources that guided the development of Skill Flex Academy.</p>
+                
+                <div class="links-grid">
+                    <a href="https://drive.google.com/file/d/1UiFjv3hAMLfCbN7cLuiGAOmzZy4OaKLg/view?usp=sharing" target="_blank" class="link-card">
+                        <div class="link-icon"><i class="fas fa-presentation"></i></div>
+                        <h3 class="link-title">Initial Strategy Pitch</h3>
+                        <p class="link-description">Google Slides deck outlining the initial business case and strategic approach.</p>
+                    </a>
+                    
+                    <a href="https://docs.google.com/document/d/1GdHlAo4GzM4BVTZo6Qokn5TSsVTZERL5pDY9MogUCw0/edit?usp=sharing" target="_blank" class="link-card">
+                        <div class="link-icon"><i class="fas fa-comments"></i></div>
+                        <h3 class="link-title">User Interview Insights</h3>
+                        <p class="link-description">Detailed documentation of user interviews and key insights gathered.</p>
+                    </a>
+                    
+                    <a href="https://bitflex.notion.site/Skill-Flex-Academy-1d421114c0f280c380f8f632efaa2d2d?source=copy_link" target="_blank" class="link-card">
+                        <div class="link-icon"><i class="fas fa-file-alt"></i></div>
+                        <h3 class="link-title">MVP PRD</h3>
+                        <p class="link-description">Product Requirements Document detailing the Minimum Viable Product scope.</p>
+                    </a>
+                    
+                    <a href="https://www.figma.com/proto/iY5fzDStWirLjwjlnAdnKk/Skill-Flex-Job-Board?node-id=13-266&t=PIZNG95IPpI5JRDP-1" target="_blank" class="link-card">
+                        <div class="link-icon"><i class="fas fa-palette"></i></div>
+                        <h3 class="link-title">Figma Prototype</h3>
+                        <p class="link-description">Interactive design prototypes and user interface mockups.</p>
+                    </a>
+                </div>
+            </div>
+
             <!-- Lessons Section -->
             <div class="content-section">
                 <h2 class="section-title">What This Experience Taught Me</h2>
@@ -731,7 +805,7 @@
                 
                 <div class="cta-buttons">
                     <a href="https://skillflexacademy.com" target="_blank" class="cta-button primary">
-                        <i class="fas fa-external-link-alt"></i> Visit Website
+                        <i class="fas fa-external-link-alt"></i> View Project
                     </a>
                     <a href="index.html#projects" class="cta-button secondary">
                         <i class="fas fa-arrow-left"></i> Back to Portfolio
@@ -741,11 +815,57 @@
         </section>
     </div>
 
+    <!-- Other Projects Section -->
+    <section class="other-projects">
+        <div class="container">
+            <h2 class="section-title">Explore More Projects</h2>
+            <p class="section-content">Check out my other product management projects and case studies.</p>
+            
+            <div class="projects-grid">
+                <a href="narravo-ai.html" class="project-card">
+                    <div class="project-image">
+                        <img src="https://i.ibb.co/x8HLftf2/Narravo-AI.png" alt="Narravo AI">
+                    </div>
+                    <div class="project-card-content">
+                        <h3 class="project-card-title">Narravo AI</h3>
+                        <span class="project-card-subtitle">AI-Powered Resume Builder</span>
+                        <p class="project-card-description">
+                            Turned the frustrating, hours-long ordeal of resume building into a simple five-minute conversation.
+                        </p>
+                        <div class="project-card-tags">
+                            <span class="project-card-tag">AI Product</span>
+                            <span class="project-card-tag">Product Owner</span>
+                            <span class="project-card-tag">0-to-1 Launch</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="skillflex-jobboard.html" class="project-card">
+                    <div class="project-image">
+                        <img src="https://i.ibb.co/93Nntjwn/Skill-Flex-Job-Board.png" alt="Skill Flex Job Board">
+                    </div>
+                    <div class="project-card-content">
+                        <h3 class="project-card-title">Skill Flex Job Board</h3>
+                        <span class="project-card-subtitle">Three-Sided Marketplace</span>
+                        <p class="project-card-description">
+                            Validated a complex marketplace connecting graduates with employers through strategic research.
+                        </p>
+                        <div class="project-card-tags">
+                            <span class="project-card-tag">Marketplace</span>
+                            <span class="project-card-tag">Product Strategy</span>
+                            <span class="project-card-tag">Prototyping</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-content">
-                <a href="index.html" class="footer-logo"><i class="fas fa-robot"></i> Avinash Kumar</a>
+                <a href="index.html" class="footer-logo"><i class="fas fa-rocket"></i> Avinash K.</a>
                 
                 <div class="footer-links">
                     <a href="index.html#home">Home</a>
@@ -762,11 +882,14 @@
                     <a href="https://github.com/Avinash79py" class="social-link" target="_blank">
                         <i class="fab fa-github"></i>
                     </a>
+                    <a href="https://avichandra.medium.com/" class="social-link" target="_blank">
+                        <i class="fab fa-medium"></i>
+                    </a>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Avinash Kumar. All rights reserved.</p>
+                <p>&copy; 2025 Avinash Kumar. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -776,26 +899,48 @@
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.background = 'var(--dark-gradient)';
                 header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
             } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.background = 'var(--dark-gradient)';
                 header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
             }
         });
         
-        // Animation on scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const animateElements = document.querySelectorAll('.process-step, .metric-card');
-            animateElements.forEach((element, index) => {
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(20px)';
-                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                
-                setTimeout(() => {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }, 300 + (index * 100));
+        // Enhanced animations for all sections
+        const animateElements = document.querySelectorAll('.section-title, .section-content, .process-step, .metric-card, .link-card, .project-card');
+        animateElements.forEach((element, index) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            
+            setTimeout(() => {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }, 150 + (index * 100));
+        });
+        
+        // Add hover effect to interactive elements
+        const interactiveItems = document.querySelectorAll('.metric-card, .link-card, .project-card, .process-step');
+        interactiveItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateY(-5px)';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Add hover effect to buttons
+        const buttons = document.querySelectorAll('.cta-button');
+        buttons.forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                button.style.transform = 'translateY(-3px)';
+            });
+            
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = 'translateY(0)';
             });
         });
     </script>
