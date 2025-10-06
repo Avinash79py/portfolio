@@ -8,7 +8,6 @@
     <link rel="icon" type="image/x-icon" href="https://i.ibb.co/8DsDSpb1/favicon-32x32.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
@@ -97,7 +96,6 @@
             max-width: 95%;
         }
         
-        /* Header Styles */
         header {
             position: fixed;
             top: 0;
@@ -182,7 +180,6 @@
             cursor: pointer;
         }
         
-        /* Hero Section */
         .hero-section {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
@@ -234,7 +231,6 @@
             border-radius: 3px;
         }
         
-        /* Metrics Section - Updated */
         .metrics-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -295,7 +291,6 @@
             font-weight: 600;
         }
         
-        /* Trusted By Section */
         .trusted-by {
             margin-bottom: 40px;
         }
@@ -359,7 +354,6 @@
             transition: filter 0.3s ease;
         }
         
-        /* CTA Buttons */
         .cta-buttons {
             display: flex;
             gap: 20px;
@@ -418,7 +412,6 @@
             box-shadow: 0 5px 15px rgba(108, 99, 255, 0.2);
         }
         
-        /* HERO IMAGE - Improved for all devices */
         .hero-image {
             height: 100vh;
             position: relative;
@@ -438,22 +431,25 @@
             align-items: center;
             justify-content: center;
             position: relative;
+            padding: 20px;
         }
         
         .hero-image img {
             width: 100%;
             height: 100%;
             object-fit: contain;
+            object-position: center;
             display: block;
             transition: all 0.5s ease;
             filter: brightness(1.05) contrast(1.05);
+            max-width: 100%;
+            max-height: 100%;
         }
         
         .hero-image:hover img {
             transform: scale(1.02);
         }
         
-        /* About Section */
         .about-section {
             background: var(--white);
             box-shadow: var(--shadow);
@@ -464,7 +460,6 @@
             margin: 40px 0;
         }
         
-        /* Skills Section */
         .skills-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -547,7 +542,6 @@
             box-shadow: 0 4px 8px rgba(108, 99, 255, 0.2);
         }
         
-        /* Strengths Section */
         .strengths-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -609,7 +603,6 @@
             line-height: 1.6;
         }
         
-        /* Projects Section */
         .projects-section {
             background: var(--white);
             box-shadow: var(--shadow);
@@ -699,30 +692,53 @@
             font-weight: 500;
         }
         
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
         .project-link {
             display: inline-flex;
             align-items: center;
-            color: var(--primary);
-            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 0.95rem;
             font-weight: 600;
+            text-decoration: none;
             transition: all 0.3s ease;
+            gap: 8px;
         }
         
-        .project-link:hover {
-            color: var(--secondary);
-            transform: translateX(5px);
+        .project-link.primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(108, 99, 255, 0.2);
+        }
+        
+        .project-link.primary:hover {
+            background: #5a52e0;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(108, 99, 255, 0.3);
+        }
+        
+        .project-link.secondary {
+            background: rgba(108, 99, 255, 0.1);
+            color: var(--primary);
+            border: 1px solid rgba(108, 99, 255, 0.2);
+        }
+        
+        .project-link.secondary:hover {
+            background: rgba(108, 99, 255, 0.15);
+            border-color: var(--primary);
+            transform: translateY(-2px);
         }
         
         .project-link i {
-            margin-left: 8px;
-            transition: transform 0.3s ease;
+            font-size: 1rem;
         }
         
-        .project-link:hover i {
-            transform: translateX(3px);
-        }
-        
-        /* Experience Section - Simplified */
         .experience-section {
             background: var(--white);
             box-shadow: var(--shadow);
@@ -733,9 +749,6 @@
             margin: 40px 0;
         }
         
-        /* Metrics Summary - Removed */
-        
-        /* Timeline Experience - Simplified */
         .timeline {
             position: relative;
             margin: 40px 0;
@@ -819,7 +832,6 @@
             margin-bottom: 15px;
         }
         
-        /* Achievement list - Simplified */
         .achievements {
             margin-top: 15px;
         }
@@ -841,7 +853,6 @@
             flex-shrink: 0;
         }
         
-        /* Skills used */
         .skills-used {
             display: flex;
             flex-wrap: wrap;
@@ -868,7 +879,6 @@
             box-shadow: 0 4px 8px rgba(108, 99, 255, 0.2);
         }
         
-        /* Recommendations Section */
         .recommendations-section {
             background: var(--white);
             box-shadow: var(--shadow);
@@ -890,7 +900,6 @@
             margin-right: auto;
         }
         
-        /* Recommendations Grid */
         .recommendations-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -1034,7 +1043,6 @@
             font-weight: 600;
         }
         
-        /* Contact Section */
         .contact-section {
             background: var(--white);
             box-shadow: var(--shadow);
@@ -1110,7 +1118,6 @@
             box-shadow: 0 10px 25px rgba(108, 99, 255, 0.4);
         }
         
-        /* Footer - Dark Theme */
         footer {
             background: var(--dark-gradient);
             color: #e2e8f0;
@@ -1196,7 +1203,6 @@
             color: #a0aec0;
         }
         
-        /* Decorative elements */
         .decoration {
             position: absolute;
             z-index: 1;
@@ -1223,7 +1229,6 @@
             animation: rotate 20s linear infinite;
         }
         
-        /* Animations */
         @keyframes pulse {
             0%, 100% { transform: scale(1); opacity: 0.7; }
             50% { transform: scale(1.1); opacity: 0.5; }
@@ -1239,7 +1244,6 @@
             50% { transform: translateY(-10px); }
         }
         
-        /* Enhanced Responsive Design */
         @media (max-width: 1200px) {
             .section-padding {
                 padding: min(7vw, 60px) min(4vw, 40px);
@@ -1267,6 +1271,17 @@
                 min-height: 400px;
             }
             
+            .hero-image-container {
+                padding: 30px 20px;
+            }
+            
+            .hero-image img {
+                object-fit: cover;
+                object-position: center top;
+                border-radius: 20px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+            
             .metrics-container {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -1290,6 +1305,15 @@
             .hero-image {
                 height: 45vh;
                 min-height: 350px;
+            }
+            
+            .hero-image-container {
+                padding: 25px 15px;
+            }
+            
+            .hero-image img {
+                object-fit: cover;
+                border-radius: 16px;
             }
             
             .metrics-container {
@@ -1338,6 +1362,15 @@
             .hero-image {
                 height: 40vh;
                 min-height: 300px;
+            }
+            
+            .hero-image-container {
+                padding: 20px 15px;
+            }
+            
+            .hero-image img {
+                object-fit: cover;
+                border-radius: 12px;
             }
             
             .cta-buttons {
@@ -1409,6 +1442,15 @@
                 flex-direction: column;
                 gap: 15px;
             }
+            
+            .project-links {
+                flex-direction: column;
+            }
+            
+            .project-link {
+                width: 100%;
+                justify-content: center;
+            }
         }
         
         @media (max-width: 600px) {
@@ -1419,6 +1461,14 @@
             .hero-image {
                 height: 35vh;
                 min-height: 250px;
+            }
+            
+            .hero-image-container {
+                padding: 15px;
+            }
+            
+            .hero-image img {
+                border-radius: 12px;
             }
             
             .metrics-container {
@@ -1461,6 +1511,15 @@
             .projects-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .project-links {
+                gap: 10px;
+            }
+            
+            .project-link {
+                padding: 10px 16px;
+                font-size: 0.9rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -1471,6 +1530,14 @@
             .hero-image {
                 height: 30vh;
                 min-height: 200px;
+            }
+            
+            .hero-image-container {
+                padding: 10px;
+            }
+            
+            .hero-image img {
+                border-radius: 10px;
             }
             
             .cta-buttons {
@@ -1530,7 +1597,6 @@
             }
         }
         
-        /* Desktop-specific optimizations */
         @media (min-width: 1025px) {
             .hero-section {
                 min-height: 100vh;
@@ -1556,7 +1622,6 @@
             }
         }
         
-        /* Large desktop screens */
         @media (min-width: 1440px) {
             .hero-content {
                 padding: 80px 60px 80px 80px;
@@ -1565,7 +1630,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="header-container">
             <a href="#" class="logo"><i class="fas fa-rocket"></i> Avinash K.</a>
@@ -1585,7 +1649,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero-section">
         <div class="decoration decoration-1"></div>
         <div class="decoration decoration-2"></div>
@@ -1600,7 +1663,6 @@
                 Specializing in 0-to-1 product development with a focus on user-centric design and data-driven decisions.
             </p>
             
-            <!-- Metrics Section - Updated -->
             <div class="metrics-container">
                 <div class="metric">
                     <div class="metric-value metric-time"><i class="fas fa-rocket"></i> 3 Products</div>
@@ -1612,7 +1674,6 @@
                 </div>
             </div>
             
-            <!-- Trusted By Section -->
             <div class="trusted-by">
                 <p class="trusted-text">Trusted by Industry Leaders</p>
                 <div class="company-logos">
@@ -1651,7 +1712,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about-section">
         <div class="decoration decoration-1"></div>
         <div class="decoration decoration-2"></div>
@@ -1667,7 +1727,6 @@
                 My unconventional background is my greatest strength. Because I've sat in different seats—from teaching to marketing to product—I don't just see a roadmap; I see the entire ecosystem around a product.
             </p>
             
-            <!-- Skills Section -->
             <h2 class="section-title">Skills & Toolkit</h2>
             
             <div class="skills-container">
@@ -1751,7 +1810,6 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="projects-section">
         <div class="decoration decoration-1"></div>
         <div class="decoration decoration-2"></div>
@@ -1764,10 +1822,9 @@
             </p>
             
             <div class="projects-grid">
-                <!-- Project 1: Narravo AI -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://i.ibb.co/x8HLftf2/Narravo-AI.png" alt="Narravo-AI" border="0">
+                        <img src="https://i.ibb.co/x8HLftf2/Narravo-AI.png" alt="Narravo-AI">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Narravo AI</h3>
@@ -1780,16 +1837,26 @@
                             <span class="project-tag">Solo Founder</span>
                             <span class="project-tag">0-to-1 Launch</span>
                         </div>
-                        <a href="narravo-ai.html" class="project-link">
-                            View Project <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <div class="project-links">
+                            <a href="narravo-ai.html" class="project-link primary">
+                                <i class="fas fa-folder-open"></i> View Case Study
+                            </a>
+                            <a href="#" class="project-link secondary">
+                                <i class="fas fa-file-alt"></i> PRD
+                            </a>
+                            <a href="#" class="project-link secondary">
+                                <i class="fab fa-miro"></i> Miro Board
+                            </a>
+                            <a href="#" class="project-link secondary">
+                                <i class="fas fa-chart-line"></i> Analytics
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Project 2: Skill Flex Academy -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://i.ibb.co/cXvp7L9x/Skill-Flex-Academy.png" alt="Skill-Flex-Academy" border="0">
+                        <img src="https://i.ibb.co/cXvp7L9x/Skill-Flex-Academy.png" alt="Skill-Flex-Academy">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Skill Flex Academy</h3>
@@ -1802,16 +1869,26 @@
                             <span class="project-tag">MVP Validation</span>
                             <span class="project-tag">Growth Strategy</span>
                         </div>
-                        <a href="skillflex-academy.html" class="project-link">
-                            View Project <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <div class="project-links">
+                            <a href="skillflex-academy.html" class="project-link primary">
+                                <i class="fas fa-folder-open"></i> View Case Study
+                            </a>
+                            <a href="#" class="project-link secondary">
+                                <i class="fas fa-file-alt"></i> Strategy Doc
+                            </a>
+                            <a href="#" class="project-link secondary">
+                                <i class="fas fa-users"></i> User Research
+                            </a>
+                            <a href="#" class="project-link secondary">
+                                <i class="fab fa-figma"></i> Designs
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Project 3: Skill Flex Job Board -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://i.ibb.co/93Nntjwn/Skill-Flex-Job-Board.png" alt="Skill-Flex-Job-Board" border="0">
+                        <img src="https://i.ibb.co/93Nntjwn/Skill-Flex-Job-Board.png" alt="Skill-Flex-Job-Board">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Skill Flex Job Board</h3>
@@ -1824,16 +1901,26 @@
                             <span class="project-tag">Product Strategy</span>
                             <span class="project-tag">Prototyping</span>
                         </div>
-                        <a href="skillflex-jobboard.html" class="project-link">
-                            View Project <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <div class="project-links">
+                            <a href="skillflex-jobboard.html" class="project-link primary">
+                                <i class="fas fa-folder-open"></i> View Case Study
+                            </a>
+                            <a href="#" class="project-link secondary">
+                                <i class="fab fa-figma"></i> Prototype
+                            </a>
+                            <a href="#" class="project-link secondary">
+                                <i class="fab fa-miro"></i> User Flow
+                            </a>
+                            <a href="#" class="project-link secondary">
+                                <i class="fas fa-file-alt"></i> Market Research
+                            </a>
+                            </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section - Simplified -->
     <section id="experience" class="experience-section">
         <div class="decoration decoration-1"></div>
         <div class="decoration decoration-2"></div>
@@ -1979,7 +2066,6 @@
         </div>
     </section>
 
-    <!-- Recommendations Section -->
     <section id="recommendations" class="recommendations-section">
         <div class="decoration decoration-1"></div>
         <div class="decoration decoration-2"></div>
@@ -1993,7 +2079,6 @@
             </p>
             
             <div class="recommendations-grid">
-                <!-- Recommendation 1 -->
                 <div class="recommendation-card">
                     <div class="recommender-info">
                         <div class="recommender-image">
@@ -2001,7 +2086,7 @@
                         </div>
                         <div class="recommender-details">
                             <h3 class="recommender-name">Aditya Priyant</h3>
-                            <p class="recommender-title">Business Finance | Udaan | IIT (ISM) Dhanbad </p>
+                            <p class="recommender-title">Business Finance | Udaan | IIT (ISM) Dhanbad</p>
                         </div>
                     </div>
                     <p class="recommendation-content">
@@ -2012,7 +2097,6 @@
                     </a>
                 </div>
                 
-                <!-- Recommendation 2 -->
                 <div class="recommendation-card">
                     <div class="recommender-info">
                         <div class="recommender-image">
@@ -2020,7 +2104,7 @@
                         </div>
                         <div class="recommender-details">
                             <h3 class="recommender-name">Prashant Kumar</h3>
-                            <p class="recommender-title">Data Science @ M&G | AI Product Dev | IIT Gandhinagar </p>
+                            <p class="recommender-title">Data Science @ M&G | AI Product Dev | IIT Gandhinagar</p>
                         </div>
                     </div>
                     <p class="recommendation-content">
@@ -2031,11 +2115,10 @@
                     </a>
                 </div>
                 
-                <!-- Recommendation 3 -->
                 <div class="recommendation-card">
                     <div class="recommender-info">
                         <div class="recommender-image">
-                            <img src="https://i.ibb.co/xKz5SdYY/Shubham-Verma.png">
+                            <img src="https://i.ibb.co/xKz5SdYY/Shubham-Verma.png" alt="Shubham Verma">
                         </div>
                         <div class="recommender-details">
                             <h3 class="recommender-name">Shubham Verma</h3>
@@ -2051,7 +2134,6 @@
                     </a>
                 </div>
                 
-                 <!-- Recommendation 4 -->
                 <div class="recommendation-card">
                     <div class="recommender-info">
                         <div class="recommender-image">
@@ -2072,7 +2154,6 @@
                     </a>
                 </div>
                 
-                <!-- Recommendation 5 -->
                 <div class="recommendation-card">
                     <div class="recommender-info">
                         <div class="recommender-image">
@@ -2094,7 +2175,6 @@
         </div>
     </section>
 
-   <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="decoration decoration-1"></div>
         <div class="decoration decoration-2"></div>
@@ -2119,7 +2199,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-content">
@@ -2151,7 +2230,6 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             const nav = document.querySelector('nav');
@@ -2160,7 +2238,6 @@
                 nav.classList.toggle('active');
             });
             
-            // Close mobile menu when clicking on a link
             const navLinks = document.querySelectorAll('nav a');
             navLinks.forEach(link => {
                 link.addEventListener('click', function() {
@@ -2168,7 +2245,6 @@
                 });
             });
             
-            // Header scroll effect
             window.addEventListener('scroll', function() {
                 const header = document.querySelector('header');
                 if (window.scrollY > 50) {
@@ -2180,7 +2256,6 @@
                 }
             });
             
-            // Enhanced animations for all sections
             const animateElements = document.querySelectorAll('.intro-text, .section-title, .description, .section-subtitle, .metrics-container, .trusted-by, .cta-buttons, .skills-container, .strengths-container, .projects-grid, .timeline-item, .recommendations-grid, .contact-options');
             animateElements.forEach((element, index) => {
                 element.style.opacity = '0';
@@ -2193,7 +2268,6 @@
                 }, 150 + (index * 100));
             });
             
-            // Add hover effect to interactive elements
             const interactiveItems = document.querySelectorAll('.metric, .company-logo, .skill-category, .strength-item, .project-card, .timeline-item, .recommendation-card');
             interactiveItems.forEach(item => {
                 item.addEventListener('mouseenter', () => {
@@ -2205,7 +2279,6 @@
                 });
             });
             
-            // Add hover effect to buttons
             const buttons = document.querySelectorAll('.cta-button, .contact-button');
             buttons.forEach(button => {
                 button.addEventListener('mouseenter', () => {
@@ -2217,7 +2290,6 @@
                 });
             });
             
-            // Active navigation highlighting
             const sections = document.querySelectorAll('section');
             const navItems = document.querySelectorAll('nav a');
             
